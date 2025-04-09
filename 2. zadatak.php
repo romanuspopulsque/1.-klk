@@ -1,8 +1,3 @@
-// 2. ZADATAK: Ispis albuma iz niza $FranzFerdinand
-<?php
-
-include 'ff_2025-02-19.php'; // Uključujemo datoteku s nizom
-
 // Varijanta 1
 <?php
 include 'ff_2025-02-19.php';
