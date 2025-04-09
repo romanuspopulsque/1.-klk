@@ -1,16 +1,24 @@
-// Varijanta 1
 <?php
 include 'ff_2025-02-19.php';
+?>
 
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Franz Ferdinand - Albumi</title>
+</head>
+<body>
+
+<h2>Varijanta 1: Svi albumi</h2>
+<?php
 foreach ($FranzFerdinand as $album) {
     echo $album['album_naslov'] . "<br>";
 }
 ?>
 
-//Varijanta 2
+<h2>Varijanta 2: Albumi s godinom i brojem pjesama</h2>
 <?php
-include 'ff_2025-02-19.php';
-
 foreach ($FranzFerdinand as $album) {
     $godina = date("Y", strtotime($album['datum_izdanja']));
     $broj_pjesama = count($album['pjesme_albuma']);
@@ -18,10 +26,8 @@ foreach ($FranzFerdinand as $album) {
 }
 ?>
 
-// Varijanta 3: Ispisujemo samo albume koji imaju barem 15 pjesama
+<h2>Varijanta 3: Albumi s barem 15 pjesama</h2>
 <?php
-include 'ff_2025-02-19.php';
-
 foreach ($FranzFerdinand as $album) {
     $broj_pjesama = count($album['pjesme_albuma']);
     if ($broj_pjesama >= 15) {
@@ -30,3 +36,6 @@ foreach ($FranzFerdinand as $album) {
     }
 }
 ?>
+
+</body>
+</html>
