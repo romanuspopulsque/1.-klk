@@ -11,10 +11,8 @@ function import() {
 // Funkcija za ispis pjesama u numeriranoj listi
 function listSongs($albums, $albumId) {
     echo "<ol>";
-    $counter = 1; // Brojač za numeriranje
     foreach ($albums[$albumId]['pjesme_albuma'] as $song => $duration) {
-        echo "<li>$counter. $song - $duration</li>";
-        $counter++; // Povećaj brojač
+        echo "<li>$song - $duration</li>";
     }
     echo "</ol>";
 }
