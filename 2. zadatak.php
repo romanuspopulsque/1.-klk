@@ -3,25 +3,35 @@
 
 include 'ff_2025-02-19.php'; // Uključujemo datoteku s nizom
 
-// Prolazimo kroz niz i ispisujemo naslove albuma s godinom izdanja i brojem pjesama
+// Varijanta 1
+<?php
+include 'ff_2025-02-19.php';
+
 foreach ($FranzFerdinand as $album) {
-    $naslov = $album["album_naslov"];
-    $godina = substr($album["datum_izdanja"], 0, 4); // Izvlačimo samo godinu
-    $broj_pjesama = count($album["pjesme_albuma"]);
-    
-    echo "$naslov ($godina) ($broj_pjesama)<br>";
+    echo $album['album_naslov'] . "<br>";
 }
+?>
+
+//Varijanta 2
+<?php
+include 'ff_2025-02-19.php';
+
+foreach ($FranzFerdinand as $album) {
+    $godina = date("Y", strtotime($album['datum_izdanja']));
+    $broj_pjesama = count($album['pjesme_albuma']);
+    echo $album['album_naslov'] . " ($godina) ($broj_pjesama)<br>";
+}
+?>
 
 // Varijanta 3: Ispisujemo samo albume koji imaju barem 15 pjesama
-echo "<br><strong>Albumi s najmanje 15 pjesama:</strong><br>";
+<?php
+include 'ff_2025-02-19.php';
+
 foreach ($FranzFerdinand as $album) {
-    $naslov = $album["album_naslov"];
-    $godina = substr($album["datum_izdanja"], 0, 4);
-    $broj_pjesama = count($album["pjesme_albuma"]);
-    
+    $broj_pjesama = count($album['pjesme_albuma']);
     if ($broj_pjesama >= 15) {
-        echo "$naslov ($godina) ($broj_pjesama)<br>";
+        $godina = date("Y", strtotime($album['datum_izdanja']));
+        echo $album['album_naslov'] . " ($godina) ($broj_pjesama)<br>";
     }
 }
-
 ?>
