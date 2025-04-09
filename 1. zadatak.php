@@ -46,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="number" id="max_number" name="max_number" value="5" min="1" required>
         <br><br>
 
-        <button type="submit" name="variant" value="1">Varijanta 1 (Od 1 do max_number)</button>
-        <button type="submit" name="variant" value="2">Varijanta 2 (Od max_number do 1)</button>
-        <button type="submit" name="variant" value="3">Varijanta 3 (Od max_number do 1 i opet do max_number)</button>
+        <button type="submit" name="variant" value="1">Varijanta 1 (Od 1 do najvećeg)</button>
+        <button type="submit" name="variant" value="2">Varijanta 2 (Od najvećeg do 1)</button>
+        <button type="submit" name="variant" value="3">Varijanta 3 (Od 1 do najvećeg vice versa)</button>
     </form>
 </body>
 </html>
