@@ -9,16 +9,14 @@ function import() {
 
 // Funkcija za ispis pjesama u numeriranoj listi
 function listSongs($albums) {
-    echo "<ol>";
-    $counter = 1; // Brojač za numeriranje
+    echo "<ol>"; // Otvori numeriranu listu samo jednom
     foreach ($albums as $album) {
         $year = date("Y", strtotime($album['datum_izdanja'])); // Izdvajanje godine izdanja
         foreach ($album['pjesme_albuma'] as $song => $duration) {
-            echo "<ol>$counter. $song ({$album['album_naslov']}, $year)</ol>";
-            $counter++; // Povećaj brojač
+            echo "<li>$song ({$album['album_naslov']}, $year) - $duration</li>";
         }
     }
-    echo "</ol>";
+    echo "</ol>"; // Zatvori listu
 }
 
 // Poziv funkcije import za dobivanje podataka
