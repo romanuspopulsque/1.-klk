@@ -14,7 +14,7 @@ function listSongs($albums) {
     foreach ($albums as $album) {
         $year = date("Y", strtotime($album['datum_izdanja'])); // Izdvajanje godine izdanja
         foreach ($album['pjesme_albuma'] as $song => $duration) {
-            echo "<li>$counter. $song ({$album['album_naslov']}, $year)</li>";
+            echo "<ol>$counter. $song ({$album['album_naslov']}, $year)</ol>";
             $counter++; // Povećaj brojač
         }
     }
